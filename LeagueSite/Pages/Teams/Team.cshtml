@@ -1,0 +1,10 @@
+﻿@page "{id}"
+@model LeagueSite.Pages.Teams.TeamModel
+@{
+    ViewData["Title"] = "Team";
+}
+
+<img src="/image/nfl/logo/@Model.LogoUrl"/>
+<h1>@Model.Team.Name</h1>
+
+<h4>Players</h4>
