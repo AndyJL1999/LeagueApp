@@ -16,7 +16,7 @@
         public int? DraftRound { get; set; }
         public int? DraftPick { get; set; }
         public string College { get; set; }
-        public string State { get; set; }
+        public string? State { get; set; }
         public int? Rank { get; set; }
         public int? Rating { get; set; }
         public int? Depth { get; set; }
