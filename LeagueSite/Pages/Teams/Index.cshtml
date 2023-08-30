@@ -23,26 +23,27 @@
     
 </nav>
 
+<h2 class="bg-secondary text-white">Divisons</h2>
 
-<div>
-    <h2>Divisons</h2>
-    @foreach(var division in Model.Divisions)
-    {
+@foreach(var division in Model.Divisions)
+{
+  <div class="border-left border-right border-bottom border-secondary">
       <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#@division.DivisionId" aria-controls="@division.DivisionId" aria-expanded="false" aria-label="Toggle navigation">
               <span>@division.Name</span>
           </button>
       </div>
       <div class="collapse" id="@division.DivisionId">
-        <div class="p-4">
-          @foreach(var team in Model.Teams)
-          {
-              if(team.DivisionId == division.DivisionId)
-              {
-                 <a class="nav-link text-dark" asp-area="" asp-page="/Teams/Team" asp-route-id=@team.TeamId>@team.Name</a>
-              }
-          }
-        </div>
+         <div class="p-1">
+            @foreach (var team in Model.Teams)
+            {
+                if (team.DivisionId == division.DivisionId)
+                {
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Teams/Team" asp-route-id=@team.TeamId>@team.Name</a>
+                }
+            }
+         </div>
       </div>
-    }
-</div>
+  </div>
+  
+}

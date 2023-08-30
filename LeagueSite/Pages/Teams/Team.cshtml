@@ -7,4 +7,32 @@
 <img src="/image/nfl/logo/@Model.LogoUrl"/>
 <h1>@Model.Team.Name</h1>
 
-<h4>Players</h4>
+<h4 class="bg-secondary text-white"">Players</h4>
+
+<div class="d-flex bg-primary text-white">
+   <div class="p-2" style="flex:0 0 10%">
+     Number
+   </div>
+   <div class="p-2" style="flex:1 0 auto">
+     Name
+   </div>
+   <div class="p-2" style="flex:0 0 25%">
+     Position
+   </div>
+</div>
+
+
+@foreach (var player in Model.RelatedPlayers)
+{
+    <div class="d-flex border-left border-right border-bottom border-secondary">
+       <div class="p-2" style="flex:0 0 10%">
+          @player.Number
+       </div>
+       <div class="p-2" style="flex:1 0 auto">
+          @player.Name
+       </div>
+       <div class="p-2" style="flex:0 0 25%">
+          @player.Position
+       </div>
+    </div>
+}
