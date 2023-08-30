@@ -7,3 +7,67 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Choose a Player</p>
+
+<form class="form-group">
+    <label asp-for="SelectedTeam" class="control-label">
+      Team:
+    </label>
+    <select class="p-2" asp-for="SelectedTeam" asp-items="Model.Teams" onchange="this.form.submit();">
+      <option value="">All</option>
+    </select>
+    <label asp-for="SortField" class="control-label">
+      Sort by:
+    </label>
+    <select class="p-2" asp-for="SortField" onchange="this.form.submit();">
+      <option value="TeamId">
+        Team
+      </option>
+      <option value="Position">
+        Position
+      </option>
+      <option value="Name">
+        Name
+      </option>
+    </select>
+
+    <label asp-for="SearchString" class="control-label">
+      Name:
+    </label>
+    <input class="p-2" type="text" asp-for="SearchString" />
+    <input type="submit" value="Search" class="btn btn-primary btn-sm" />
+</form>
+
+<div class="d-flex bg-primary text-white">
+
+   <div class="p-2" style="flex:0 0 10%">
+     Team
+   </div>
+   <div class="p-2" style="flex:0 0 10%">
+     Number
+   </div>
+   <div class="p-2" style="flex:1 0 auto">
+     Name
+   </div>
+   <div class="p-2" style="flex:0 0 25%">
+     Position
+   </div>
+</div>
+
+
+@foreach (var player in Model.Players)
+{
+    <div class="d-flex border-left border-right border-bottom border-secondary">
+       <div class="p-2" style="flex:0 0 10%">
+          @player.TeamId
+       </div>
+       <div class="p-2" style="flex:0 0 10%">
+          @player.Number
+       </div>
+       <div class="p-2" style="flex:1 0 auto">
+          @player.Name
+       </div>
+       <div class="p-2" style="flex:0 0 25%">
+          @player.Position
+       </div>
+    </div>
+}
