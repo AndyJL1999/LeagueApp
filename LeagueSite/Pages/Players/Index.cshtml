@@ -51,6 +51,9 @@
    <div class="p-2" style="flex:0 0 25%">
      Position
    </div>
+   <div class="p-2" style="flex:0 0 10%">
+     Details
+   </div>
 </div>
 
 
@@ -68,6 +71,11 @@
        </div>
        <div class="p-2" style="flex:0 0 25%">
           @player.Position
+       </div>
+       <div class="p-2 btn-group" style="flex:0 0 10%">
+          <a class="btn btn-primary btn-sm" asp-page="/Players/Player" asp-route-id="@player.PlayerId">
+            Details
+          </a>
        </div>
     </div>
 }

@@ -1,5 +1,49 @@
-﻿@page
+﻿@page "{id}"
 @model LeagueSite.Pages.Players.PlayerModel
 @{
+    ViewData["Title"] = "Player";
 }
 
+<h1>@Model.Player.Name</h1>
+
+<div class="d-flex bg-primary text-white">
+   <div class="p-2" style="flex:0 0 10%">
+     Team
+   </div>
+   <div class="p-2" style="flex:0 0 10%">
+     Number
+   </div>
+   <div class="p-2" style="flex:0 0 10%">
+     Age
+   </div>
+   <div class="p-2" style="flex:0 0 10%">
+     Draft Year
+   </div>
+   <div class="p-2" style="flex:1 0 auto">
+     College
+   </div>
+   <div class="p-2" style="flex:0 0 25%">
+     Position
+   </div>
+</div>
+
+<div class="d-flex border-left border-right border-bottom border-secondary">
+   <div class="p-2" style="flex:0 0 10%">
+    @Model.Player.TeamId
+   </div>
+   <div class="p-2" style="flex:0 0 10%">
+    @Model.Player.Number
+   </div>
+   <div class="p-2" style="flex:0 0 10%">
+    @Model.Player.Age
+   </div>
+   <div class="p-2" style="flex:0 0 10%">
+    @Model.Player.DraftYear
+   </div>
+   <div class="p-2" style="flex:1 0 auto">
+    @Model.Player.College
+   </div>
+   <div class="p-2" style="flex:0 0 25%">
+    @Model.Player.Position
+   </div>
+</div>
