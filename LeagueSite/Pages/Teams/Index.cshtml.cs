@@ -32,7 +32,9 @@ namespace LeagueSite.Pages.Teams
                 Divisions = await _context.Divisions.Where(d => d.ConferenceId == conferenceId).ToListAsync();
             }
             
-            Teams = await _context.Teams.ToListAsync();
+            Teams = await _context.Teams
+                .OrderByDescending(t => t.Win)
+                .ToListAsync();
 
             return Page();
         }

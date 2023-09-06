@@ -34,15 +34,35 @@
           </button>
       </div>
       <div class="collapse" id="@division.DivisionId">
-         <div class="p-1">
-            @foreach (var team in Model.Teams)
-            {
-                if (team.DivisionId == division.DivisionId)
-                {
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Teams/Team" asp-route-id=@team.TeamId>@team.Name</a>
-                }
-            }
+
+         <div class="d-flex bg-primary text-white">
+           <div class="p-2" style="flex:0 0 50%">
+             Team
+           </div>
+           <div class="p-2" style="flex:1 0 auto">
+             Win/Loss/Tie
+           </div>
          </div>
+
+         @foreach (var team in Model.Teams)
+         {
+             if (team.DivisionId == division.DivisionId)
+             {
+                
+                <div class="d-flex border-left border-right border-bottom border-secondary">
+                    <div class="p-2" style="flex:0 0 50%">
+                       <a class="nav-link text-dark" asp-area="" asp-page="/Teams/Team" asp-route-id=@team.TeamId>@team.Name</a>
+                    </div>
+                    <div class="d-flex" style="flex:1 0 auto">
+                       <span style="flex:0 0 5%; text-align:center">@team.Win</span>
+                       <span style="flex:0 0 1%">-</span>
+                       <span style="flex:0 0 5%; text-align:center">@team.Loss</span>
+                       <span style="flex:0 0 1%">-</span>
+                       <span style="flex:0 0 5%; text-align:center">@team.Tie</span>
+                    </div>
+                </div>
+             }
+         }
       </div>
   </div>
   
