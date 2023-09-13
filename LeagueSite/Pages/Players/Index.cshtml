@@ -12,13 +12,13 @@
     <label asp-for="SelectedTeam" class="control-label">
       Team:
     </label>
-    <select class="p-2" asp-for="SelectedTeam" asp-items="Model.Teams" onchange="this.form.submit();">
+    <select class="p-0" asp-for="SelectedTeam" asp-items="Model.Teams" onchange="this.form.submit();" style="height: 25px; margin-right: 5px;">
       <option value="">All</option>
     </select>
     <label asp-for="SortField" class="control-label">
       Sort by:
     </label>
-    <select class="p-2" asp-for="SortField" onchange="this.form.submit();">
+    <select class="p-0" asp-for="SortField" onchange="this.form.submit();" style="height: 25px; margin-right: 5px;">
       <option value="TeamId">
         Team
       </option>
@@ -33,11 +33,11 @@
     <label asp-for="SearchString" class="control-label">
       Name:
     </label>
-    <input class="p-2" type="text" asp-for="SearchString" />
-    <input type="submit" value="Search" class="btn btn-primary btn-sm" />
+    <input class="p-1" type="text" asp-for="SearchString" style="height: 25px" />
+    <input type="submit" value="Search" class="btn btn-primary btn-sm p-0" style="height: 25px; width: 50px; margin-bottom: 5px;" />
 </form>
 
-<div class="d-flex bg-primary text-white">
+<div class="d-flex bg-primary text-white" style="margin-top: 10px">
 
    <div class="p-2" style="flex:0 0 10%">
      Team
