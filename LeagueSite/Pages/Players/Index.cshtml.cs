@@ -35,7 +35,7 @@ namespace LeagueSite.Pages.Players
             if (!string.IsNullOrEmpty(SearchString))
             {
                 Players = Players
-                    .Where(c => c.Name.Contains(SearchString))
+                    .Where(c => c.Name.ToLower().Contains(SearchString.ToLower()))
                     .ToList();
             }
 
