@@ -23,7 +23,7 @@ namespace LeagueSite.Pages.Teams
         {
             Conferences = await _context.Conferences.ToListAsync();
 
-            if (string.IsNullOrEmpty(conferenceId))
+            if (string.IsNullOrEmpty(conferenceId)) // Default conference is 'AFC', otherwise conference is selected by user
             {
                 Divisions = await _context.Divisions.Where(d => d.ConferenceId == "AFC").ToListAsync();
             }
@@ -32,6 +32,7 @@ namespace LeagueSite.Pages.Teams
                 Divisions = await _context.Divisions.Where(d => d.ConferenceId == conferenceId).ToListAsync();
             }
             
+            // All teams are ordered by wins
             Teams = await _context.Teams
                 .OrderByDescending(t => t.Win)
                 .ToListAsync();

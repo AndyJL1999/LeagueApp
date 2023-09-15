@@ -46,7 +46,7 @@
 
          @foreach (var team in Model.Teams)
          {
-             if (team.DivisionId == division.DivisionId)
+             if (team.DivisionId == division.DivisionId) // Show only the teams of the selected division
              {
                 
                 <div class="d-flex border-left border-right border-bottom border-secondary">

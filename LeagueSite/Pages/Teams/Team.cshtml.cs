@@ -21,8 +21,13 @@ namespace LeagueSite.Pages.Teams
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
+            // Get selected team by id
             Team = await _context.Teams.FindAsync(id);
+
+            // Get team logo for display
             LogoUrl = Team.TeamId + ".png";
+
+            // Get players of the selected team (ordered by name)
             RelatedPlayers = await _context.Players
                 .Where(p => p.TeamId == id)
                 .OrderBy(p => p.Name)
